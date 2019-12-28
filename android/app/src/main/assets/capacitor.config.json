@@ -1,0 +1,8 @@
+{
+  "appId": "be.vsoft.portfolio",
+  "appName": "portfolio",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

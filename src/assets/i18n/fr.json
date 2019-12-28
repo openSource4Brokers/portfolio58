@@ -1,0 +1,187 @@
+{
+  "MANUALNEWEDIT": {
+    "TitleNew": "Ajouter assurance",
+    "TitleEdit": "Modifier assurance",
+    "a010": "Assureur",
+    "a000": "Police",
+    "vs97": "Code d'état",
+    "vs99": "Info (30 caractères)",
+    "vs98": "Brève description (180 caractères)",
+    "a325": "Split premium",
+    "aw2": "Date d'expiration"
+  },
+
+  "MENU": {
+    "OfficePage": "Page de bureau",
+    "MyProfile": "Ma page de profil",
+    "InsurersList": "Liste des assureurs",
+    "About": "À propos Portfolio",
+    "LogOut": "Déconnexion"
+  },
+
+  "HOME": {
+    "PageTitle": "monPortfolio",
+    "LogIn": "Se connecter",
+    "MyProfilePage": "Ma page de profil",
+    "MessageAboutApp": "Consultez vos contrats d'assurance, envoyez votre déclaration de photos, documents et messages. Appelez les lignes d'assistance de vos assureurs impliqués",
+    "WelcomeMessage": "Mes contrats d'assurance - Bienvenue!",
+    "MessageLoginServer": "Connexion au serveur",
+    "MessageServerLocalCopy": "Server Datakopie",
+    "MessageNoServerOnlyLocalCopy": "Contracts manuel"
+  },
+
+  "SETTINGS": {
+    "MessageToggleLocal": "Seulement manuellement",
+    "MessageToggleCanceled": "Montrer détruit aussi",
+    "MessageToggleServerLive": "Données en direct du serveur",
+    "MessageAlert": "Modifiez les paramètres ci-dessous si nécessaire et terminez avec la sélection de la langue."
+  },
+
+  "LOGIN": {
+    "Title": "Se connecter",
+    "Username": "Nom d'utilisateur",
+    "Password": "Mot de passe",
+    "Register": "S'inscrire",
+    "UsernameMessage": "Le nom d'utilisateur est requis",
+    "PasswordMessage": "Le mot de passe est requis",
+    "PasswordMinMessage": "Mot de passe au moins 8 caractères",
+    "PasswordMaxMessage": "Mot de passe maximum 36 caractères",
+    "LoginSuccess": "Se connecter avec succès",
+    "LoginFailed": "Échec de la connexion"
+  },
+
+  "REGISTER": {
+    "Title": "S'inscrire",
+    "UsernameLabel": "Nom d'utilisateur",
+    "EmailLabel": "Email",
+    "DateOfBirthLabel": "Date de naissance",
+    "BerNumberLabel": "Numéro de registre national",
+    "PasswordLabel": "Mot de passe",
+    "PasswordRepeatLabel": "Répéter le mot de passe",
+    "UsernameMessage": "Le nom d'utilisateur est requis",
+    "EmailMessage": "Email est requis.",
+    "EmailPattern": "Adresse email valide s.v.p.",
+    "DateOfBirthMessage": "La date de naissance est obligatoir",
+    "BerNumberMessage": "Le numéro de registre national est requis",
+    "BerNumberMinMaxMessage": "Numéro de registre national toujours 11 chiffres.",
+    "PasswordMessage": "Le mot de passe est requis",
+    "PasswordMinMessage": "Mot de passe au moins 8 caractères",
+    "PasswordMaxMessage": "Mot de passe maximum 36 caractères",
+    "RegisterSuccess": "Inscription réussie",
+    "RegisterFailed": "L'enregistrement a échoué"
+  },
+
+  "MEMBER": {
+    "MyProfile": "Ma page de profil",
+    "MyPolicies": "Mes contrats d'assurance",
+    "KnownAs": "Nom",
+    "Age": "Âge",
+    "ClientNumber": "Numéro de client",
+    "LastActive": "Dernière connexion",
+    "Created": "Date d'inscription"
+  },
+
+  "CONTRACTSLIST": {
+    "Title": "Mes contrats d'assurance",
+    "MyDocuments": "Mes documents"
+  },
+
+  "ALERT": {
+    "authMessage": "You need to be logged in to access this area",
+    "header": "Erreur",
+    "msg": "Quelque chose a mal tourné",
+    "titleRefresh": "Actualiser la page!",
+    "titleSaveCopy": "Enregistrer localement!",
+    "titleDeletePhotos": "Supprimer photos!",
+    "msgRefresh": "Supprimer vos contrats manuels.",
+    "msgSaveCopy": "Enregistrez localement une copie des données de serveur.",
+    "msgDeletePhotos": "Supprimer vos photos enregistrées.",
+    "msgAreYouSure": "Êtes-vous sûr?",
+    "btnCancelText": "Annuler",
+    "btnOkText": "Ok"
+  },
+
+  "INSURERS": {
+    "Phone": "Tel.",
+    "Mail": "Mail",
+    "Fax": "Fax"
+  },
+
+  "selectOptions": {
+    "A010": [
+      { "value": "0014", "viewValue": "0014: KBC" },
+      { "value": "0033", "viewValue": "0033: Fidea" },
+      { "value": "0037", "viewValue": "0037: Belfius" },
+      { "value": "0039", "viewValue": "0039: Axa Belgium" },
+      { "value": "0051", "viewValue": "0051: Vivium (ex Vaderlandsche)" },
+      { "value": "0058", "viewValue": "0058: P&V (Vivium)" },
+      { "value": "0079", "viewValue": "0079: AG Insurance" },
+      { "value": "0096", "viewValue": "0096: Baloise Insurance" },
+      { "value": "0097", "viewValue": "0097: Allianz Benelux" },
+      { "value": "0145", "viewValue": "0145: Athora (Generali Belgium)" },
+      { "value": "0196", "viewValue": "0196: Ethias" },
+      { "value": "0339", "viewValue": "0339: Mensura" },
+      { "value": "0445", "viewValue": "0445: Arag Aide juridique" },
+      { "value": "0463", "viewValue": "0463: Euromex Aide juridique" },
+      { "value": "0664", "viewValue": "0664: NN (Delta Lloyd Life)" },
+      { "value": "0687", "viewValue": "0687: DAS Aide juridique" },
+      { "value": "0739", "viewValue": "0739: D.K.V." },
+      { "value": "0858", "viewValue": "0858: Argenta Verzekeringen" },
+      { "value": "0985", "viewValue": "0985: Dela" },
+      { "value": "1037", "viewValue": "1037: Piette & Partners" },
+      { "value": "1401", "viewValue": "1401: Europ Assistance" },
+      { "value": "2393", "viewValue": "0097: Optimco" }
+    ],
+
+    "A102": [
+      { "value": "0", "viewvalue": "0:" },
+      { "value": "1", "viewValue": "1: Dhr." },
+      { "value": "2", "viewValue": "2: Mw." },
+      { "value": "3", "viewValue": "3: Mej." },
+      { "value": "4", "viewValue": "4: Dhrn." },
+      { "value": "5", "viewValue": "5: Mr&Mw" },
+      { "value": "6", "viewValue": "6: Firma" },
+      { "value": "7", "viewValue": "7: C.V." },
+      { "value": "8", "viewValue": "8: Bvba" },
+      { "value": "9", "viewValue": "9: N.V." }
+    ],
+
+    "A10C": [
+      { "value": "0", "viewvalue": "0:" },
+      { "value": "1", "viewValue": "1: Français" },
+      { "value": "2", "viewValue": "2: Néerlandais" },
+      { "value": "3", "viewValue": "3: Allemand" },
+      { "value": "4", "viewValue": "4: Anglais" },
+      { "value": "9", "viewValue": "9: Autre" }
+    ],
+
+    "V032": [
+      { "value": "O", "viewValue": "O: Indéfinie" },
+      { "value": "V", "viewValue": "V: Fixe" },
+      { "value": "R", "viewValue": "R: Relativement" }
+    ],
+
+    "VS97": [
+      { "value": "0", "viewValue": "Coll. Ass." },
+      { "value": "1", "viewValue": "Par Mail" },
+      { "value": "2", "viewValue": "Email" },
+      { "value": "3", "viewValue": "Rappel 1" },
+      { "value": "4", "viewValue": "Rappel 2" },
+      { "value": "5", "viewValue": "Nouveau cas" },
+      { "value": "6", "viewValue": "Changement" },
+      { "value": "7", "viewValue": "Suspension" },
+      { "value": "8", "viewValue": "Divers" },
+      { "value": "9", "viewValue": "Détruit" }
+    ],
+
+    "A325": [
+      { "value": "1", "viewValue": "Annuellement" },
+      { "value": "2", "viewValue": "Semestriel" },
+      { "value": "3", "viewValue": "Trimestriel" },
+      { "value": "4", "viewValue": "Mensuel" },
+      { "value": "5", "viewValue": "Prime unique" },
+      { "value": "8", "viewValue": "domAnnuel" },
+      { "value": "9", "viewValue": "domMensuel" }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{ 'MEMBER.MyProfile' | translate }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <!-- <ion-button (click)="presentAlertConfirm()">
+        <ion-icon name="refresh" slot="icon-only"></ion-icon>
+      </ion-button> -->
+      <ion-button>
+        <ion-spinner *ngIf="isLoading"></ion-spinner>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <div *ngIf="hasClientNumber">
+          <ion-button (click)="loadClientData(user.clientNumber)" color="primary" expand="block">
+            {{ 'MEMBER.MyPolicies' | translate }}
+          </ion-button>
+        </div>
+        <div *appHasRole="['Admin']">
+          <ion-item>
+            <ion-label position="floating">Client Number to search</ion-label>
+            <ion-input type="text" [(ngModel)]="searchClient"></ion-input>
+          </ion-item>
+          <ion-button (click)="fakeClientNumber(user.clientNumber)" color="primary" expand="block">
+            Special
+          </ion-button>
+        </div>
+        <ion-list>
+          <ion-item>
+            <ion-label>{{ 'MEMBER.KnownAs' | translate }}</ion-label>
+            <ion-badge slot="end" color="light">{{ user.knownAs }}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{ 'MEMBER.Age' | translate }}</ion-label>
+            <ion-badge slot="end" color="light">{{ user.age }}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{ 'MEMBER.ClientNumber' | translate }}</ion-label>
+            <ion-badge slot="end" color="light">{{ user.clientNumber }}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{ 'MEMBER.LastActive' | translate }}</ion-label>
+            <ion-badge slot="end" color="light">{{ user.lastActive | date :'dd/MM/y H:MM' }}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{ 'MEMBER.Created' | translate }}</ion-label>
+            <ion-badge slot="end" color="light">{{ user.created | date :'dd/MM/y H:MM' }}</ion-badge>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>    
+    <!-- <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <app-image-picker (imagePick)="onImagePicked($event)"></app-image-picker>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+</ion-content>

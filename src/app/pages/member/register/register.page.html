@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'REGISTER.Title' | translate }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-spinner *ngIf="isLoading"></ion-spinner>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="registerForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.username">
+              <div class="error-message"
+                *ngIf="registerForm.get('username').hasError(validation.type) && (registerForm.get('username').dirty || registerForm.get('username').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message"
+                *ngIf="registerForm.get('email').hasError(validation.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.dateOfBirth">
+              <div class="error-message"
+                *ngIf="registerForm.get('dateOfBirth').hasError(validation.type) && (registerForm.get('dateOfBirth').dirty || registerForm.get('dateOfBirth').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.berNumber">
+              <div class="error-message"
+                *ngIf="registerForm.get('berNumber').hasError(validation.type) && (registerForm.get('berNumber').dirty || registerForm.get('berNumber').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.password">
+              <div class="error-message"
+                *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-list>
+            <ion-item>              
+              <ion-label position="floating">{{ 'REGISTER.UsernameLabel' | translate }}</ion-label>
+              <ion-input type="text" formControlName="username"></ion-input>
+            </ion-item>
+            <ion-item>              
+              <ion-label position="floating">{{ 'REGISTER.EmailLabel' | translate }}</ion-label>
+              <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>              
+              <ion-label position="floating">{{ 'REGISTER.DateOfBirthLabel' | translate }}</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" min="1906-01-01" [max]=[maxAge] formControlName="dateOfBirth">
+              </ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">{{ 'REGISTER.BerNumberLabel' | translate }}</ion-label>
+              <ion-input type="text" formControlName="berNumber"></ion-input>
+            </ion-item>
+
+            <ion-item>              
+              <ion-label position="floating">{{ 'REGISTER.PasswordLabel' | translate }}</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <ion-item>              
+              <ion-label position="floating">{{ 'REGISTER.PasswordRepeatLabel' | translate }}</ion-label>
+              <ion-input type="password" formControlName="confirmPassword"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="!isLoading">
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button (click)="register()" type="submit" color="primary" [disabled]="registerForm.invalid"
+            expand="block">            
+            {{ 'REGISTER.Title' | translate }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'LOGIN.Title' | translate }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-spinner *ngIf="isLoading"></ion-spinner>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="loginForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <!-- <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.username">
+              <div class="error-message"
+                *ngIf="loginForm.get('username').hasError(validation.type) && (loginForm.get('username').dirty || loginForm.get('username').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.password">
+              <div class="error-message"
+                *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div> -->
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">{{ 'LOGIN.Username' | translate }}</ion-label>
+              <ion-input type="text" formControlName="username"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">{{ 'LOGIN.Password' | translate }}</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="!isLoading">
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button (click)="login()" type="submit" color="primary" [disabled]="loginForm.invalid" expand="block">
+            {{ 'LOGIN.Title' | translate }}
+          </ion-button>
+          <ion-button [disabled]="!loginForm.invalid" [routerLink]="'/register'" color="primary" fill="clear"
+            expand="block">
+            {{ 'LOGIN.Register' | translate }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

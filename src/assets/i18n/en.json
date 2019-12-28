@@ -1,0 +1,201 @@
+{
+  "MAP": {
+    "Title": "Map: Where am I?",
+    "Lat": "Latitude",
+    "Lng": "Longitude",
+    "Address": "Address",
+    "Select": "Choose Location",
+    "AutoLocate": "Auto-Locate",
+    "PickOnMap": "Pick on Map",
+    "Cancel": "Cancel",
+    "ErrorHeader": "Could not fetch location",
+    "ErrorMessage": "Please use the map to pick a location!",
+    "ErrorOkay": "Okay"
+  },
+
+  "MENU": {
+    "OfficePage": "Office Page",
+    "MyProfile": "My Profile Page",
+    "InsurersList": "Insurers List",
+    "About": "About Portfolio",
+    "LogOut": "Logout"
+  },
+
+  "HOME": {
+    "PageTitle": "myPortfolio",
+    "LogIn": "Login",
+    "MyProfilePage": "My Profile Page",
+    "MessageAboutApp": "Consult your insurance policies, send your claim pictures, documents and messages. Call helplines of your insurers",
+    "WelcomeMessage": "My Policies - Welcome!",
+    "MessageLoginServer": "Logon server",
+    "MessageServerLocalCopy": "Server data copy",
+    "MessageNoServerOnlyLocalCopy": "Policies manual"
+  },
+
+  "SETTINGS": {
+    "MessageToggleLocal": "Manual input only",
+    "MessageToggleCanceled": "Show also canceled",
+    "MessageToggleServerLive": "Server lookup",
+    "MessageAlert": "Change settings below if necessary and close with language of choise"
+  },
+
+  "LOGIN": {
+    "Title": "Log In",
+    "Username": "Username",
+    "Password": "Password",
+    "Register": "Register",
+    "UsernameMessage": "Username is required",
+    "PasswordMessage": "Password is required",
+    "PasswordMinMessage": "Password at least 8 characters",
+    "PasswordMaxMessage": "Password no more than 36 characters",
+    "LoginSuccess": "Login successfull",
+    "LoginFailed": "Login failed"
+  },
+
+  "REGISTER": {
+    "Title": "Register",
+    "UsernameLabel": "Username",
+    "EmailLabel": "Email",
+    "DateOfBirthLabel": "Date of birth",
+    "BerNumberLabel": "Country Registration",
+    "PasswordLabel": "Password",
+    "PasswordRepeatLabel": "Repeat Password",
+    "UsernameMessage": "Username is required.",
+    "EmailMessage": "Email is required.",
+    "EmailPattern": "Valid email address please.",
+    "DateOfBirthMessage": "Date of birth is required.",
+    "BerNumberMessage": "Registration number is required",
+    "BerNumberMinMaxMessage": "Belgian registration number is 11 numbers.",
+    "PasswordMessage": "Password is required",
+    "PasswordMinMessage": "Password at least 8 characters",
+    "PasswordMaxMessage": "Paswoord no more than 36 characters",
+    "RegisterSuccess": "Successfull registration. You can now add your policies outside our office. Access to your policies in our office follows soon after identity check.",
+    "RegisterFailed": "Registratie failed"
+  },
+
+  "MEMBER": {
+    "MyProfile": "My Profile Page",
+    "MyPolicies": "My Policies",
+    "KnownAs": "Name",
+    "Age": "Age",
+    "ClientNumber": "Client number",
+    "LastActive": "Last Active",
+    "Created": "Created"
+  },
+
+  "CONTRACTSLIST": {
+    "Title": "My policies",
+    "MyDocuments": "My Documents"
+  },
+
+  "MANUALNEWEDIT": {
+    "TitleNew": "Add Policie",
+    "TitleEdit": "Edit Policie",
+    "a010": "Insurer",
+    "a000": "Policie",
+    "vs97": "Status code",
+    "vs99": "Info (30 characters)",
+    "vs98": "Short description (180 characters)",
+    "a325": "Splitsing",
+    "aw2": "Ending date"
+  },
+
+  "ALERT": {
+    "authMessage": "You need to be logged in to access this area",
+    "header": "Error",
+    "msg": "There was a problem with your operation",
+    "titleRefresh": "Page Refresh!",
+    "titleSaveCopy": "Save local!",
+    "titleDeletePhotos": "Delete photos!",
+    "msgRefresh": "Removing your input of local policies.",
+    "msgSaveCopy": "Save locally a copy of your server data.",
+    "msgDeletePhotos": "Delete saved photos.",
+    "msgAreYouSure": "Are you sure?",
+    "btnCancelText": "Cancel",
+    "btnOkText": "Ok"
+  },
+
+  "INSURERS": {
+    "Phone": "Tel.",
+    "Mail": "Mail",
+    "Fax": "Fax"
+  },
+
+  "selectOptions": {
+    "A010": [
+      { "value": "0014", "viewValue": "0014: KBC" },
+      { "value": "0033", "viewValue": "0033: Fidea" },
+      { "value": "0037", "viewValue": "0037: Belfius" },
+      { "value": "0039", "viewValue": "0039: Axa Belgium" },
+      { "value": "0051", "viewValue": "0051: Vivium (ex Vaderlandsche)" },
+      { "value": "0058", "viewValue": "0058: P&V (Vivium)" },
+      { "value": "0079", "viewValue": "0079: AG Insurance" },
+      { "value": "0096", "viewValue": "0096: Baloise Insurance" },
+      { "value": "0097", "viewValue": "0097: Allianz Benelux" },
+      { "value": "0145", "viewValue": "0145: Generali Belgium" },
+      { "value": "0196", "viewValue": "0196: Ethias" },
+      { "value": "0339", "viewValue": "0339: Mensura" },
+      { "value": "0445", "viewValue": "0445: Arag Rechtsbijstand" },
+      { "value": "0463", "viewValue": "0463: Euromex Rechtsbijstand" },
+      { "value": "0664", "viewValue": "0664: NN (Delta Lloyd Life)" },
+      { "value": "0687", "viewValue": "0687: DAS Rechtsbijstand" },
+      { "value": "0739", "viewValue": "0739: D.K.V." },
+      { "value": "0858", "viewValue": "0858: Argenta Verzekeringen" },
+      { "value": "0985", "viewValue": "0985: Dela" },
+      { "value": "1037", "viewValue": "1037: Piette & Partners" },
+      { "value": "1401", "viewValue": "1401: Europ Assistance" },
+      { "value": "2393", "viewValue": "0097: Optimco" }
+    ],
+
+    "A102": [
+      { "value": "0", "viewvalue": "0:" },
+      { "value": "1", "viewValue": "1: Mr." },
+      { "value": "2", "viewValue": "2: Ms." },
+      { "value": "3", "viewValue": "3: Mss." },
+      { "value": "4", "viewValue": "4: Mrs." },
+      { "value": "5", "viewValue": "5: Mr&Ms" },
+      { "value": "6", "viewValue": "6: Firm" },
+      { "value": "7", "viewValue": "7: C.V." },
+      { "value": "8", "viewValue": "8: Ltd" },
+      { "value": "9", "viewValue": "9: N.V." }
+    ],
+
+    "A10C": [
+      { "value": "0", "viewvalue": "0:" },
+      { "value": "1", "viewValue": "1: French" },
+      { "value": "2", "viewValue": "2: Dutch" },
+      { "value": "3", "viewValue": "3: German" },
+      { "value": "4", "viewValue": "4: English" },
+      { "value": "9", "viewValue": "9: Other" }
+    ],
+
+    "V032": [
+      { "value": "O", "viewValue": "O: Onbepaald" },
+      { "value": "V", "viewValue": "V: Fixed" },
+      { "value": "R", "viewValue": "R: Relative" }
+    ],
+
+    "VS97": [
+      { "value": "0", "viewValue": "Coll. Ins." },
+      { "value": "1", "viewValue": "Post" },
+      { "value": "2", "viewValue": "E-Mail" },
+      { "value": "3", "viewValue": "Recall 1" },
+      { "value": "4", "viewValue": "Recall 2" },
+      { "value": "5", "viewValue": "New case" },
+      { "value": "6", "viewValue": "Change" },
+      { "value": "7", "viewValue": "Suspension" },
+      { "value": "8", "viewValue": "Several" },
+      { "value": "9", "viewValue": "Canceled" }
+    ],
+
+    "A325": [
+      { "value": "1", "viewValue": "Yearly" },
+      { "value": "2", "viewValue": "Zesmaandelijks" },
+      { "value": "3", "viewValue": "Driemaandelijks" },
+      { "value": "4", "viewValue": "Monthly" },
+      { "value": "5", "viewValue": "Enige premie" },
+      { "value": "8", "viewValue": "domYearly" },
+      { "value": "9", "viewValue": "domMonthly" }
+    ]
+  }
+}

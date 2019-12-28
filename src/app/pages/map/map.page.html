@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ 'MAP.Title' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <app-location-picker (locationPick)="onLocationPicked($event)"></app-location-picker>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-item *ngIf="pickedLatitude">
+      <ion-label>{{ 'MAP.Lat' | translate }}</ion-label>
+      <ion-badge slot="end" color="light">{{ pickedLatitude }}</ion-badge>
+    </ion-item>
+    <ion-item *ngIf="pickedLongitude">
+      <ion-label>{{ 'MAP.Lng' | translate }}</ion-label>
+      <ion-badge slot="end" color="light">{{ pickedLongitude }}</ion-badge>
+    </ion-item>
+    <ion-item *ngIf="pickedAddress">
+      <ion-label>{{ 'MAP.Address' | translate }}</ion-label>
+      <ion-badge slot="end" color="light">{{ pickedAddress }}</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

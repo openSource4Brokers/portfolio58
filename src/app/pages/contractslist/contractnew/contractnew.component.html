@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ 'MANUALNEWEDIT.TitleNew' | translate }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCreate()" [disabled]="!form.valid">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ 'MANUALNEWEDIT.a010' | translate }}</ion-label>
+            <ion-select formControlName="a010" interface="popover">
+              <ion-select-option *ngFor="let item of A010S" [value]="item.value" size-sm="12">
+                {{ item.viewValue }} </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="3" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ 'MANUALNEWEDIT.a000' | translate }}</ion-label>
+            <ion-input type="text" formControlName="id"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ 'MANUALNEWEDIT.vs97' | translate }}</ion-label>
+            <ion-select formControlName="vs97" interface="popover">
+              <ion-select-option *ngFor="let item of VS97S" [value]="item.value" size-sm="12">
+                {{ item.viewValue }} </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ 'MANUALNEWEDIT.vs99' | translate }}Info</ion-label>
+            <ion-input type="text" formControlName="vs99"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ 'MANUALNEWEDIT.vs98' | translate }}</ion-label>
+            <ion-textarea rows="3" formControlName="vs98"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="3" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ 'MANUALNEWEDIT.a325' | translate }}</ion-label>
+            <ion-select formControlName="a325" interface="popover">
+              <ion-select-option *ngFor="let item of A325S" [value]="item.value" size-sm="12">
+                {{ item.viewValue }} </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ 'MANUALNEWEDIT.aw2' | translate }}</ion-label>
+            <ion-datetime max="2099-12-31" displayFormat="DD/MM/YYYY" formControlName="aw2">
+            </ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </form>
+</ion-content>

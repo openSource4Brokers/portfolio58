@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'CONTRACTSLIST.Title' | translate }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button *ngIf="toggleServerLive" (click)="saveLocalCopy()">
+        <ion-icon name="save" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="!toggleServerLive" (click)="presentAlertConfirm()">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="onNewManualContract()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <div *ngIf="hasDocumentsDef">
+          <a target="_blank" [href]="myDocuments">{{ 'CONTRACTSLIST.MyDocuments' | translate }}</a>
+        </div>
+        <ion-list>
+          <div *ngFor="let servercontract of servercontracts; let i = index">
+            <div *ngIf="toggleShowCanceled">
+              <ion-item (click)="showServerContractDetail(i)" detail>
+                <ion-thumbnail slot="start">
+                  <ion-img class="insurer-image" [src]="'/assets/images/companies/be_'+servercontract.a010+'.png'">
+                  </ion-img>
+                </ion-thumbnail>
+                <ion-label>
+                  <div [ngStyle]="{'color':getColor(servercontract.vs97)}">
+                    <h2>{{ servercontract.id }}</h2>
+                    <h5>{{ servercontract.vs99 }}</h5>
+                    <h5>{{ servercontract.vs98 }}</h5>
+                  </div>
+                </ion-label>
+              </ion-item>
+            </div>
+            <div *ngIf="!toggleShowCanceled">
+              <div *ngIf="servercontract.vs97 !== '9'">
+                <ion-item (click)="showServerContractDetail(i)" detail>
+                  <ion-thumbnail slot="start">
+                    <ion-img class="insurer-image" [src]="'/assets/images/companies/be_'+servercontract.a010+'.png'">
+                    </ion-img>
+                  </ion-thumbnail>
+                  <ion-label>
+                    <div [ngStyle]="{'color':getColor(servercontract.vs97)}">
+                      <h2>{{ servercontract.id }}</h2>
+                      <h5>{{ servercontract.vs99 }}</h5>
+                      <h5>{{ servercontract.vs98 }}</h5>
+                    </div>
+                  </ion-label>
+                </ion-item>
+              </div>
+            </div>
+          </div>
+          <div *ngFor="let manualcontract of manualcontracts; let i = index">
+            <div *ngIf="toggleShowCanceled">
+              <ion-item-sliding #slidingElement>
+                <ion-item (click)="showManualContractDetail(i)">
+                  <ion-thumbnail slot="start">
+                    <ion-img class="insurer-image" [src]="'/assets/images/companies/be_'+manualcontract.a010+'.png'">
+                    </ion-img>
+                  </ion-thumbnail>
+                  <ion-label>
+                    <div [ngStyle]="{'color':getColor(manualcontract.vs97)}">
+                      <h2>{{ manualcontract.id }}</h2>
+                      <h5>{{ manualcontract.vs99 }}</h5>
+                      <h5>{{ manualcontract.vs98 }}</h5>
+                    </div>
+                  </ion-label>
+                </ion-item>
+                <ion-item-options side="start">
+                  <ion-item-option color="danger" (click)="onDeleteManualContract(i, slidingElement)">
+                    <ion-icon name="trash" slot="icon-only"></ion-icon>
+                  </ion-item-option>
+                </ion-item-options>
+                <ion-item-options side="end">
+                  <ion-item-option color="secondary" (click)="onEditManualContract(i, slidingElement)">
+                    <ion-icon name="create" slot="icon-only"></ion-icon>
+                  </ion-item-option>
+                </ion-item-options>
+              </ion-item-sliding>
+            </div>
+            <div *ngIf="!toggleShowCanceled">
+              <div *ngIf="manualcontract.vs97 !== '9'">
+                <ion-item-sliding #slidingElement>
+                  <ion-item (click)="showManualContractDetail(i)">
+                    <ion-thumbnail slot="start">
+                      <ion-img class="insurer-image" [src]="'/assets/images/companies/be_'+manualcontract.a010+'.png'">
+                      </ion-img>
+                    </ion-thumbnail>
+                    <ion-label>
+                      <div [ngStyle]="{'color':getColor(manualcontract.vs97)}">
+                        <h2>{{ manualcontract.id }}</h2>
+                        <h5>{{ manualcontract.vs99 }}</h5>
+                        <h5>{{ manualcontract.vs98 }}</h5>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item-options side="start">
+                    <ion-item-option color="danger" (click)="onDeleteManualContract(i, slidingElement)">
+                      <ion-icon name="trash" slot="icon-only"></ion-icon>
+                    </ion-item-option>
+                  </ion-item-options>
+                  <ion-item-options side="end">
+                    <ion-item-option color="secondary" (click)="onEditManualContract(i, slidingElement)">
+                      <ion-icon name="create" slot="icon-only"></ion-icon>
+                    </ion-item-option>
+                  </ion-item-options>
+                </ion-item-sliding>
+              </div>
+            </div>
+          </div>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLink="/insurers">
+      <ion-label>{{ 'MENU.InsurersList' | translate }}</ion-label>
+      <ion-icon name="search"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/about">
+      <ion-label>{{ 'MENU.About' | translate }}</ion-label>
+      <ion-icon name="card"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->

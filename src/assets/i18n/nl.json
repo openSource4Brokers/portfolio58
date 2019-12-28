@@ -1,0 +1,201 @@
+{
+  "MAP": {
+    "Title": "Map: Waar benk ik?",
+    "Lat": "Latitude",
+    "Lng": "Longitude",
+    "Address": "Adres",
+    "Select": "Kies Locatie",
+    "AutoLocate": "Auto Locatie",
+    "PickOnMap": "Kies op de map",
+    "Cancel": "Cancel",
+    "ErrorHeader": "Kan locatie niet vinden",
+    "ErrorMessage": "A.u.b. gebruik de map om een locatie te kiezen!",
+    "ErrorOkay": "Ok"    
+  },
+
+  "MANUALNEWEDIT": {
+    "TitleNew": "Polis toevoegen",
+    "TitleEdit": "Polis wijzigen",
+    "a010": "Verzekeraar",
+    "a000": "Polis",
+    "vs97": "Statuscode",
+    "vs99": "Info (30 tekens)",
+    "vs98": "Korte beschrijving (180 tekens)",
+    "a325": "Splitsing",
+    "aw2": "Eindvervaldag"
+  },
+
+  "MENU": {
+    "OfficePage": "Kantoor pagina",
+    "MyProfile": "Mijn Profiel Pagina",
+    "InsurersList": "Lijst Verzekeraars",
+    "About": "Over Portfolio",
+    "LogOut": "Uitloggen"
+  },
+
+  "HOME": {
+    "PageTitle": "mijnPortfolio",
+    "LogIn": "Inloggen",
+    "MyProfilePage": "Mijn Profiel Pagina",
+    "MessageAboutApp": "Raadpleeg uw verzekeringscontracten, verzendt uw aangifte van foto's, documenten en berichten. Bel de helplijnen van uw betrokken verzekeraars",
+    "WelcomeMessage": "Mijn Contracten - Welkom!",
+    "MessageLoginServer": "Server login ",
+    "MessageServerLocalCopy": "Server Datakopie",
+    "MessageNoServerOnlyLocalCopy": "Contracten manueel"
+  },
+
+  "SETTINGS": {
+    "MessageToggleLocal": "Enkel manuele ingave",
+    "MessageToggleCanceled": "Toon ook vernietigd",
+    "MessageToggleServerLive": "Server bevragen",
+    "MessageAlert": "Wijzig EERST instellingen onderaan en sluit DAARNA af met taalkeuze!"
+  },
+
+  "LOGIN": {
+    "Title": "Inloggen",
+    "Username": "Gebruikersnaam",
+    "Password": "Paswoord",
+    "Register": "Registreren",
+    "UsernameMessage": "Gebruikersnaam is verplicht",
+    "PasswordMessage": "Paswoord is verplicht",
+    "PasswordMinMessage": "Paswoord minstens 8 tekens",
+    "PasswordMaxMessage": "Paswoord maximaal 36 tekens",
+    "LoginSuccess": "Login met success",
+    "LoginFailed": "Login is mislukt"
+  },
+
+  "REGISTER": {
+    "Title": "Registreren",
+    "UsernameLabel": "Gebruikersnaam",
+    "EmailLabel": "Email",
+    "DateOfBirthLabel": "Geboortedatum",
+    "BerNumberLabel": "Nummer Rijksregister",
+    "PasswordLabel": "Paswoord",
+    "PasswordRepeatLabel": "Herhaal Paswoord",
+    "UsernameMessage": "Gebruikersnaam is verplicht",
+    "EmailMessage": "Email is verplicht.",
+    "EmailPattern": "Geldig mailadres a.u.b.",
+    "DateOfBirthMessage": "Geboortedatum is verplicht",
+    "BerNumberMessage": "Rijksregisternummer is verplicht",
+    "BerNumberMinMaxMessage": "Nummer rijksregister steeds 11 cijfers.",
+    "PasswordMessage": "Paswoord is verplicht",
+    "PasswordMinMessage": "Paswoord minstens 8 tekens",
+    "PasswordMaxMessage": "Paswoord maximaal 36 tekens",
+    "RegisterSuccess": "Registratie is gelukt.  U kan al contracten buiten ons kantoor ingeven.  Toegang tot uw polissen bij ons kantoor volgt spoedig na identiteitscontrole.",
+    "RegisterFailed": "Registratie is mislukt"
+  },
+
+  "MEMBER": {
+    "MyProfile": "Mijn Profiel Pagina",
+    "MyPolicies": "Mijn Polissen",
+    "KnownAs": "Naam",
+    "Age": "Leeftijd",
+    "ClientNumber": "Klantnummer",
+    "LastActive": "Laatste inlog",
+    "Created": "Datum registratie"
+  },
+
+  "CONTRACTSLIST": {
+    "Title": "Mijn Polissen",
+    "MyDocuments": "Mijn Documenten"
+  },
+
+  "ALERT": {
+    "authMessage": "Deze pagina is toegangelijk eens ingelogd.",
+    "header": "Fout",
+    "msg": "Er ging iets verkeerd",
+    "titleRefresh": "Pagina vernieuwen!",
+    "titleSaveCopy": "Lokaal bewaren!",
+    "titleDeletePhotos": "Foto's verwijderen!",
+    "msgRefresh": "Uw manuele contracten verwijderen.",
+    "msgSaveCopy": "Een kopie van de serverdata bewaren op dit toestel.",
+    "msgDeletePhotos": "Bewaarde foto(s verwijderen.",
+    "msgAreYouSure": "Bent U zeker?",
+    "btnCancelText": "Cancel",
+    "btnOkText": "Ok"
+  },
+
+  "INSURERS": {
+    "Phone": "Tel.",
+    "Mail": "Mail",
+    "Fax": "Fax"
+  },
+
+  "selectOptions": {
+    "A010": [
+      { "value": "0014", "viewValue": "0014: KBC" },
+      { "value": "0033", "viewValue": "0033: Fidea" },
+      { "value": "0037", "viewValue": "0037: Belfius" },
+      { "value": "0039", "viewValue": "0039: Axa Belgium" },
+      { "value": "0051", "viewValue": "0051: Vivium (ex Vaderlandsche)" },
+      { "value": "0058", "viewValue": "0058: P&V (Vivium)" },
+      { "value": "0079", "viewValue": "0079: AG Insurance" },
+      { "value": "0096", "viewValue": "0096: Baloise Insurance" },
+      { "value": "0097", "viewValue": "0097: Allianz Benelux" },
+      { "value": "0145", "viewValue": "0145: Generali Belgium" },
+      { "value": "0196", "viewValue": "0196: Ethias" },
+      { "value": "0339", "viewValue": "0339: Mensura" },
+      { "value": "0445", "viewValue": "0445: Arag Rechtsbijstand" },
+      { "value": "0463", "viewValue": "0463: Euromex Rechtsbijstand" },
+      { "value": "0664", "viewValue": "0664: NN (Delta Lloyd Life)" },
+      { "value": "0687", "viewValue": "0687: DAS Rechtsbijstand" },
+      { "value": "0739", "viewValue": "0739: D.K.V." },
+      { "value": "0858", "viewValue": "0858: Argenta Verzekeringen" },
+      { "value": "0985", "viewValue": "0985: Dela" },
+      { "value": "1037", "viewValue": "1037: Piette & Partners" },
+      { "value": "1401", "viewValue": "1401: Europ Assistance" },
+      { "value": "2393", "viewValue": "0097: Optimco" }
+    ],
+
+    "A102": [
+      { "value": "0", "viewvalue": "0:" },
+      { "value": "1", "viewValue": "1: Dhr." },
+      { "value": "2", "viewValue": "2: Mw." },
+      { "value": "3", "viewValue": "3: Mej." },
+      { "value": "4", "viewValue": "4: Dhrn." },
+      { "value": "5", "viewValue": "5: Mr&Mw" },
+      { "value": "6", "viewValue": "6: Firma" },
+      { "value": "7", "viewValue": "7: C.V." },
+      { "value": "8", "viewValue": "8: Bvba" },
+      { "value": "9", "viewValue": "9: N.V." }
+    ],
+
+    "A10C": [
+      { "value": "0", "viewvalue": "0:" },
+      { "value": "1", "viewValue": "1: Frans" },
+      { "value": "2", "viewValue": "2: Nederlands" },
+      { "value": "3", "viewValue": "3: Duits" },
+      { "value": "4", "viewValue": "4: Engels" },
+      { "value": "9", "viewValue": "9: Andere" }
+    ],
+
+    "V032": [
+      { "value": "O", "viewValue": "O: Onbepaald" },
+      { "value": "V", "viewValue": "V: Vast" },
+      { "value": "R", "viewValue": "R: Relatief" }
+    ],
+
+    "VS97": [
+      { "value": "0", "viewValue": "Inning Mij" },
+      { "value": "1", "viewValue": "Post" },
+      { "value": "2", "viewValue": "Mail" },
+      { "value": "3", "viewValue": "Rappel 1" },
+      { "value": "4", "viewValue": "Rappel 2" },
+      { "value": "5", "viewValue": "Nieuwe zaak" },
+      { "value": "6", "viewValue": "Wijziging" },
+      { "value": "7", "viewValue": "Schorsing" },
+      { "value": "8", "viewValue": "Diverse" },
+      { "value": "9", "viewValue": "Vernietigd" }
+    ],
+
+    "A325": [
+      { "value": "1", "viewValue": "Jaarlijks" },
+      { "value": "2", "viewValue": "Zesmaandelijks" },
+      { "value": "3", "viewValue": "Driemaandelijks" },
+      { "value": "4", "viewValue": "Maandelijks" },
+      { "value": "5", "viewValue": "Enige premie" },
+      { "value": "8", "viewValue": "domJaarlijks" },
+      { "value": "9", "viewValue": "domMaandelijks" }
+    ]
+  }
+}
