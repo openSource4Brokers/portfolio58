@@ -19,7 +19,7 @@
 
 <ion-content>
   <ion-row>
-    <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+    <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
       <ion-card class="welcome-card">
         <div *ngIf="!toggleLocalOnly">
           <ion-img class="home-image" src="/assets/images/office.jpg"></ion-img>
@@ -37,7 +37,7 @@
         <ion-card-content>
           <p>{{ 'HOME.MessageAboutApp' | translate }}</p>
         </ion-card-content>
-       
+
         <div *ngIf="!loggedIn()">
           <div *ngIf="toggleServerLive">
             <ion-button [routerLink]="'/login'" color="primary" expand="block">
@@ -45,8 +45,8 @@
             </ion-button>
           </div>
         </div>
-        
-        <div *ngIf="loggedIn()" padding>
+
+        <div *ngIf="loggedIn()" class="ion-padding">
           <div *ngIf="toggleServerLive">
             <ion-button (click)="showMemberPage()" color="primary" expand="block">
               {{ 'HOME.MyProfilePage' | translate }}

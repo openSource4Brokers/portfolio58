@@ -6,8 +6,8 @@ android {
         applicationId "be.vsoft.portfolio"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 79
-        versionName "2.20"
+        versionCode 80
+        versionName "2.21"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
