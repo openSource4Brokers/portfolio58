@@ -18,8 +18,8 @@ Your manualy added data is stored as json files inside the localStorage of the b
 ## Development Tools used for this app
 - [NodeJS](https://nodejs.org/)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Ionic CLI](https://www.npmjs.com/package/ionic): `npm i -g ionic`
-- [Angular CLI](https://www.npmjs.com/package/@angular/cli): `npm i @angular/cli`
+- [Ionic CLI](https://www.npmjs.com/package/@ionic/cli): `npm i -g @ionic/cli`
+- [Angular CLI](https://www.npmjs.com/package/@angular/cli): `npm i -g @angular/cli`
 
 ## NPM packages used for this app
 - [@ngx-translate/core](https://www.npmjs.com/package/@ngx-translate/core): `npm i @ngx-translate/core`
@@ -28,7 +28,7 @@ Your manualy added data is stored as json files inside the localStorage of the b
 
 - install all packages in one commandline: `npm i @ngx-translate/core @ngx-translate/http-loader vsoftvalidation`
 
-## web.config on older Windows IIS Hosting
+## web.config on older Windows IIS Hosting ONLY!
 To prevent errors when the client refreshes a page, building for Microsoft IIS hosting needs installing web.config. Save a copy of this file inside your src directory:
 ```
 <configuration>

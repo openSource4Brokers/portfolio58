@@ -65,9 +65,14 @@ const routes: Routes = [
   }
 ];
 
+// routes, { useHash: true }
+
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, {
+      useHash: true,
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   providers: [MemberEditResolver, VsoftCustomerService, CustomerDetailResolver],
   exports: [RouterModule]
