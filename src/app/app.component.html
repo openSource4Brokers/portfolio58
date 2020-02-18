@@ -12,37 +12,37 @@
       <ion-list>
         <ion-menu-toggle>
           <ion-item lines="none" routerLink="/home">
-            <ion-icon name="list" slot="start"></ion-icon>
+            <ion-icon name="home" slot="start" ></ion-icon>            
             <ion-label>{{ 'MENU.OfficePage' | translate }}</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/map">
-            <ion-icon name="map" slot="start"></ion-icon>
+          <ion-item lines="none" routerLink="/map">            
+            <ion-icon name="locate" slot="start"></ion-icon>
             <ion-label>{{ 'MAP.Title' | translate }}</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item lines="none" routerLink="/insurers">
-            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-icon name="list" slot="start"></ion-icon>
             <ion-label>{{ 'MENU.InsurersList' | translate }}</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item lines="none" routerLink="/about">
-            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-icon name="git-network" slot="start"></ion-icon>
             <ion-label>{{ 'MENU.About' | translate }}</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle *ngIf="loggedIn()">
           <ion-item lines="none" (click)="onLogout()" button>
-            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-icon name="log-out" slot="start"></ion-icon>
             <ion-label>{{ 'MENU.LogOut' | translate }}</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item lines="none" routerLink="/device">
-            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-icon name="laptop" slot="start"></ion-icon>
             <ion-label>Testing Page</ion-label>
           </ion-item>
         </ion-menu-toggle>
