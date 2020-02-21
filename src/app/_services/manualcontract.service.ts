@@ -20,21 +20,21 @@ export class ManualContractService {
     } */
   ]);
 
-  constructor(private storage: Storage) {}
+  constructor(private ionicStorage: Storage) {}
 
   get manualContracts() {
     return this._manualcontracts.asObservable();
   }
 
   loadManualContracts() {
-    this.storage.get('MANUALCONTRACTS').then(val => {
+    this.ionicStorage.get('MANUALCONTRACTS').then(val => {
       this._manualcontracts.next(JSON.parse(val));
     });
   }
 
   saveManualContracts() {
     const myJSON = JSON.stringify(this._manualcontracts);
-    this.storage.set('MANUALCONTRACTS', myJSON);
+    this.ionicStorage.set('MANUALCONTRACTS', myJSON);
   }
 
   getManualContract(Id: string) {

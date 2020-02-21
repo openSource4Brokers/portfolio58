@@ -13,13 +13,13 @@ export class MemberEditResolver implements Resolve<User> {
     private userService: UserService,
     private router: Router,
     private authService: AuthService,
-    private ts: ToastService
+    private toast: ToastService
   ) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<User> {
     return this.userService.getUser(this.authService.decodedToken.nameid).pipe(
       catchError(error => {
-        this.ts.show('Problem retrieving your data', 'short');
+        this.toast.show('Problem retrieving your data', 'short');
         this.router.navigate(['/home']);
         return of(null);
       })

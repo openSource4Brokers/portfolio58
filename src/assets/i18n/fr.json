@@ -1,4 +1,18 @@
 {
+  "MAP": {
+    "Title": "Où suis-je?",
+    "Lat": "Latitude",
+    "Lng": "Longitude",
+    "Address": "Adresse",
+    "Select": "Choisissez un lieu",
+    "AutoLocate": "Localisation automatique",
+    "PickOnMap": "Choisissez sur une carte",
+    "Cancel": "Annuler",
+    "ErrorHeader": "Impossible de récupérer l'emplacement",
+    "ErrorMessage": "Veuillez utiliser la carte pour choisir un emplacement!",
+    "ErrorOkay": "D'accord"    
+  },
+
   "MANUALNEWEDIT": {
     "TitleNew": "Ajouter assurance",
     "TitleEdit": "Modifier assurance",
@@ -12,11 +26,12 @@
   },
 
   "MENU": {
-    "OfficePage": "Page de bureau",
-    "MyProfile": "Ma page de profil",
+    "HomePage": "Page d'accueil",
+    "MyProfile": "Page de profil",
     "InsurersList": "Liste des assureurs",
     "About": "À propos Portfolio",
-    "LogOut": "Déconnexion"
+    "LogOut": "Déconnexion",
+    "MyDevice": "Info Appareil"
   },
 
   "HOME": {
@@ -31,9 +46,9 @@
   },
 
   "SETTINGS": {
-    "MessageToggleLocal": "Seulement manuellement",
-    "MessageToggleCanceled": "Montrer détruit aussi",
-    "MessageToggleServerLive": "Données en direct du serveur",
+    "MessageToggleLocal": "Entrée manuelle",
+    "MessageToggleCanceled": "Egalement annulé",
+    "MessageToggleServerLive": "Consulter le serveur",
     "MessageAlert": "Modifiez les paramètres ci-dessous si nécessaire et terminez avec la sélection de la langue."
   },
 

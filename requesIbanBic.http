@@ -1,0 +1,6 @@
+GET https://www.ibanbic.be/IBANBIC.asmx/About
+
+###
+GET https://www.ibanbic.be/IBANBIC.asmx/Version
+
+

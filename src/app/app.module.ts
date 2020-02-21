@@ -29,7 +29,7 @@ export function tokenGetter(): string {
 }
 
 export const jwtConfig = {
-  tokenGetter: tokenGetter,
+  tokenGetter,
   whitelistedDomains: environment.apiWhiteListDomain,
   blacklistedRoutes: environment.apiBlackListDomain
 };

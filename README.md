@@ -57,7 +57,18 @@ Do not forget to mention the location of web.config in angular.json "assets" whe
 "assets": [... , "src/web.config"],
 ```
 
-BUILD STEPS ANDROID:
-ng build --prod
-ionic capacitor sync android
-ionic capacitor open android
+## Building steps Android:
+`ng build --prod`
+
+`ionic capacitor sync android`
+
+`ionic capacitor open android`
+
+
+## VS CODE Extensions 2020
+
+indent rainbow
+
+rest client 
+
+css peek (ctrl+hover)

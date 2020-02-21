@@ -20,17 +20,17 @@ export class SettingsPopoverPage implements OnInit {
 
   constructor(
     private popoverCtrl: PopoverController,
-    private languageService: LanguageService,
+    private ls: LanguageService,
     private toastService: ToastService,
     private ts: TranslateService,
-    private storage: Storage
+    private ionicStorage: Storage
   ) {}
 
   ngOnInit() {
-    this.languages = this.languageService.getLanguages();
-    this.selected = this.languageService.selected;
+    this.languages = this.ls.getLanguages();
+    this.selected = this.ls.selected;
 
-    this.storage.get('LOCALONLY').then(val => {
+    this.ionicStorage.get('LOCALONLY').then(val => {
       if (val === 'TRUE') {
         this.toggleLocalOnly = true;
       } else {
@@ -38,7 +38,7 @@ export class SettingsPopoverPage implements OnInit {
       }
     });
 
-    this.storage.get('SHOWCANCELED').then(val => {
+    this.ionicStorage.get('SHOWCANCELED').then(val => {
       if (val === 'TRUE') {
         this.toggleShowCanceled = true;
       } else {
@@ -46,7 +46,7 @@ export class SettingsPopoverPage implements OnInit {
       }
     });
 
-    this.storage.get('SERVERLIVE').then(val => {
+    this.ionicStorage.get('SERVERLIVE').then(val => {
       if (val === 'TRUE') {
         this.toggleServerLive = true;
       } else {
@@ -60,28 +60,28 @@ export class SettingsPopoverPage implements OnInit {
   }
 
   select(lng) {
-    this.languageService.setLanguage(lng);
+    this.ls.setLanguage(lng);
     this.saveSettings();
     this.popoverCtrl.dismiss();
   }
 
   saveSettings() {
     if (this.toggleLocalOnly) {
-      this.storage.set('LOCALONLY', 'TRUE');
+      this.ionicStorage.set('LOCALONLY', 'TRUE');
     } else {
-      this.storage.set('LOCALONLY', 'FALSE');
+      this.ionicStorage.set('LOCALONLY', 'FALSE');
     }
 
     if (this.toggleShowCanceled) {
-      this.storage.set('SHOWCANCELED', 'TRUE');
+      this.ionicStorage.set('SHOWCANCELED', 'TRUE');
     } else {
-      this.storage.set('SHOWCANCELED', 'FALSE');
+      this.ionicStorage.set('SHOWCANCELED', 'FALSE');
     }
 
     if (this.toggleServerLive) {
-      this.storage.set('SERVERLIVE', 'TRUE');
+      this.ionicStorage.set('SERVERLIVE', 'TRUE');
     } else {
-      this.storage.set('SERVERLIVE', 'FALSE');
+      this.ionicStorage.set('SERVERLIVE', 'FALSE');
     }
   }
 }

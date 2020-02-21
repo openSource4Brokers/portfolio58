@@ -11,20 +11,20 @@ export class AuthGuard implements CanActivate {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private translate: TranslateService,
-    private ts: ToastService
+    private ts: TranslateService,
+    private toast: ToastService
   ) {}
 
   canActivate(next: ActivatedRouteSnapshot): boolean {
-    const roles = next.firstChild.data['roles'] as Array<string>;
+    const roles = next.firstChild.data.roles as Array<string>;
     if (roles) {
       const match = this.authService.roleMatch(roles);
       if (match) {
         return true;
       } else {
         this.router.navigate(['/home']);
-        this.translate.get('ALERT.authMessage').subscribe(value => {
-          this.ts.show(value, 'long');
+        this.ts.get('ALERT.authMessage').subscribe(value => {
+          this.toast.show(value, 'long');
         });
       }
     }
@@ -33,8 +33,8 @@ export class AuthGuard implements CanActivate {
       return true;
     }
 
-    this.translate.get('ALERT.authMessage').subscribe(value => {
-      this.ts.show(value, 'long');
+    this.ts.get('ALERT.authMessage').subscribe(value => {
+      this.toast.show(value, 'long');
     });
 
     this.authService.currentUser = null;

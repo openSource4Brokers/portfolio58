@@ -54,7 +54,7 @@ export class MemberPage implements OnInit {
     private ts: ToastService,
     private translate: TranslateService,
     private alertCtrl: AlertController,
-    private storage: Storage
+    private ionicStorage: Storage
   ) {}
 
   ionViewWillEnter() {
@@ -104,7 +104,7 @@ export class MemberPage implements OnInit {
     });
 
     // Save all photos for later viewing
-    this.storage.set('photos', this.photos);
+    this.ionicStorage.set('photos', this.photos);
     // console.log(this.imgData);
   }
 
@@ -146,7 +146,7 @@ export class MemberPage implements OnInit {
   }
 
   loadSavedPhotos() {
-    this.storage.get('photos').then(photos => {
+    this.ionicStorage.get('photos').then(photos => {
       this.photos = photos || [];
     });
   }

@@ -34,29 +34,32 @@ export class ContractsListPage implements OnInit, OnDestroy {
 
   manualcontracts: VsoftContract[];
   private manualcontractsSub: Subscription;
+  isLocalCopy: boolean;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private modalCtrl: ModalController,
     private mcService: ManualContractService,
-    private storage: Storage,
+    private ionicStorage: Storage,
     private alertCtrl: AlertController,
-    private translate: TranslateService
+    private ts: TranslateService
   ) {}
 
   ngOnInit() {
     if (this.router.url === '/customerslocalcopy') {
-      this.storage.get('SERVERCOPY').then(val => {
+      this.isLocalCopy = true;
+      this.ionicStorage.get('SERVERCOPY').then(val => {
         this.customer = JSON.parse(val);
       });
     } else {
+      this.isLocalCopy = false;
       this.route.data.subscribe(data => {
-        this.customer = data['customer'];
+        this.customer = data.customer;
       });
     }
 
-    this.storage.get('SERVERLIVE').then(vals => {
+    this.ionicStorage.get('SERVERLIVE').then(vals => {
       if (vals === 'TRUE') {
         this.toggleServerLive = true;
       } else {
@@ -64,7 +67,7 @@ export class ContractsListPage implements OnInit, OnDestroy {
       }
     });
 
-    this.storage.get('SHOWCANCELED').then(vals => {
+    this.ionicStorage.get('SHOWCANCELED').then(vals => {
       if (vals === 'TRUE') {
         this.toggleShowCanceled = true;
       } else {
@@ -72,7 +75,7 @@ export class ContractsListPage implements OnInit, OnDestroy {
       }
     });
 
-    this.storage.get('LOCALONLY').then(vall => {
+    this.ionicStorage.get('LOCALONLY').then(vall => {
       if (vall === 'TRUE') {
         this.toggleLocalOnly = true;
       } else {
@@ -92,7 +95,7 @@ export class ContractsListPage implements OnInit, OnDestroy {
       mcontracts => {
         this.manualcontracts = mcontracts;
         const myJSON = JSON.stringify(this.manualcontracts);
-        this.storage.set('MANUALCONTRACTS', myJSON);
+        this.ionicStorage.set('MANUALCONTRACTS', myJSON);
       }
     );
   }
@@ -122,7 +125,8 @@ export class ContractsListPage implements OnInit, OnDestroy {
         component: ContractdetailComponent,
         componentProps: {
           selectedContract: this.servercontracts[i],
-          isManual: false
+          isManual: false,
+          localCopy: this.isLocalCopy
         }
       })
       .then(modalEl => {
@@ -138,7 +142,8 @@ export class ContractsListPage implements OnInit, OnDestroy {
         component: ContractdetailComponent,
         componentProps: {
           selectedContract: this.manualcontracts[i],
-          isManual: true
+          isManual: true,
+          localCopy: this.isLocalCopy
         }
       })
       .then(modalEl => {
@@ -184,7 +189,7 @@ export class ContractsListPage implements OnInit, OnDestroy {
         if (resultData.role === 'updated') {
           this.manualcontracts[mcIndex] = resultData.data;
           const myJSON = JSON.stringify(this.manualcontracts);
-          this.storage.set('MANUALCONTRACTS', myJSON);
+          this.ionicStorage.set('MANUALCONTRACTS', myJSON);
         }
       });
   }
@@ -195,27 +200,27 @@ export class ContractsListPage implements OnInit, OnDestroy {
 
   async saveLocalCopy() {
     const alert = await this.alertCtrl.create({
-      header: this.translate.instant('ALERT.titleSaveCopy'),
+      header: this.ts.instant('ALERT.titleSaveCopy'),
       message:
-        this.translate.instant('ALERT.msgSaveCopy') +
+        this.ts.instant('ALERT.msgSaveCopy') +
         ' <strong>' +
-        this.translate.instant('ALERT.msgAreYouSure') +
+        this.ts.instant('ALERT.msgAreYouSure') +
         '</strong>',
       buttons: [
         {
-          text: this.translate.instant('ALERT.btnCancelText'),
+          text: this.ts.instant('ALERT.btnCancelText'),
           role: 'cancel',
           cssClass: 'secondary',
           handler: blah => {}
         },
         {
-          text: this.translate.instant('ALERT.btnOkText'),
+          text: this.ts.instant('ALERT.btnOkText'),
           handler: () => {
             const myJSON = JSON.stringify(this.customer);
-            this.storage.set('SERVERCOPY', myJSON);
+            this.ionicStorage.set('SERVERCOPY', myJSON);
 
             const dateOfCopy = new Date();
-            this.storage.set('DATEOFCOPY', dateOfCopy.toISOString());
+            this.ionicStorage.set('DATEOFCOPY', dateOfCopy.toISOString());
           }
         }
       ]
@@ -226,21 +231,21 @@ export class ContractsListPage implements OnInit, OnDestroy {
 
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
-      header: this.translate.instant('ALERT.titleRefresh'),
+      header: this.ts.instant('ALERT.titleRefresh'),
       message:
-        this.translate.instant('ALERT.msgRefresh') +
+        this.ts.instant('ALERT.msgRefresh') +
         ' <strong>' +
-        this.translate.instant('ALERT.msgAreYouSure') +
+        this.ts.instant('ALERT.msgAreYouSure') +
         '</strong>',
       buttons: [
         {
-          text: this.translate.instant('ALERT.btnCancelText'),
+          text: this.ts.instant('ALERT.btnCancelText'),
           role: 'cancel',
           cssClass: 'secondary',
           handler: blah => {}
         },
         {
-          text: this.translate.instant('ALERT.btnOkText'),
+          text: this.ts.instant('ALERT.btnOkText'),
           handler: () => {
             window.location.reload();
           }

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+
 import { TranslateService } from '@ngx-translate/core';
 
 import { InsurerService } from '../../../_services/insurer.service';
@@ -19,6 +21,7 @@ const { Clipboard } = Plugins;
 export class ContractdetailComponent implements OnInit {
   @Input() selectedContract: VsoftContract;
   @Input() isManual: boolean;
+  @Input() localCopy: boolean;
 
   isAndroid: boolean;
   isTablet: boolean;
@@ -36,21 +39,20 @@ export class ContractdetailComponent implements OnInit {
   VS97S: SelectOptions[]; // Actioncode
 
   constructor(
+    private ionicStorage: Storage,
     private platform: Platform,
     private insurerService: InsurerService,
     private modalCtrl: ModalController,
-    private translate: TranslateService,
+    private ts: TranslateService,
     private router: Router
   ) {}
 
   ionViewDidLoad() {}
 
   refreshLanguage() {
-    this.translate
-      .get('selectOptions.VS97')
-      .subscribe((res: SelectOptions[]) => {
-        this.VS97S = res;
-      });
+    this.ts.get('selectOptions.VS97').subscribe((res: SelectOptions[]) => {
+      this.VS97S = res;
+    });
   }
 
   ngOnInit() {
@@ -102,10 +104,12 @@ export class ContractdetailComponent implements OnInit {
   }
 
   onCall(comNumber: string) {
+    this.commingFrom('onCall');
     window.open('tel:' + comNumber, '_system');
   }
 
   onMail(mailAddress: string) {
+    this.commingFrom('onMail');
     if (this.loadedInsurer.id === 'be_0145') {
       this.policie = '$' + this.selectedContract.id + '$';
     } else {
@@ -119,6 +123,11 @@ export class ContractdetailComponent implements OnInit {
       'mailto:' + mailAddress + subject + '&body=' + message,
       '_system'
     );
+  }
+
+  commingFrom(me: string) {
+    // console.log(me, this.selectedContract);
+    this.ionicStorage.set('LAST_CONTRACT', this.selectedContract);
   }
 
   loadMapPage() {

@@ -10,13 +10,13 @@ const LNG_KEY = 'SELECTED_LANGUAGE';
 export class LanguageService {
   selected = '';
 
-  constructor(private translate: TranslateService, private storage: Storage) {}
+  constructor(private ts: TranslateService, private ionicStorage: Storage) {}
 
   setInitialAppLanguage() {
-    const language = this.translate.getBrowserLang();
-    this.translate.setDefaultLang(language);
+    const language = this.ts.getBrowserLang();
+    this.ts.setDefaultLang(language);
 
-    this.storage.get(LNG_KEY).then(val => {
+    this.ionicStorage.get(LNG_KEY).then(val => {
       if (val) {
         this.setLanguage(val);
         this.selected = val;
@@ -46,8 +46,8 @@ export class LanguageService {
   }
 
   setLanguage(lng) {
-    this.translate.use(lng);
+    this.ts.use(lng);
     this.selected = lng;
-    this.storage.set(LNG_KEY, lng);
+    this.ionicStorage.set(LNG_KEY, lng);
   }
 }

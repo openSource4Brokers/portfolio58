@@ -55,7 +55,7 @@ export class DeviceInfoPage implements OnInit {
 
   constructor(
     private sanitizer: DomSanitizer,
-    private storage: Storage,
+    private ionicStorage: Storage,
     private platform: Platform,
     private alertCtrl: AlertController,
     private translate: TranslateService
@@ -67,7 +67,7 @@ export class DeviceInfoPage implements OnInit {
   }
 
   loadSavedPhotos() {
-    this.storage.get('photos').then(photos => {
+    this.ionicStorage.get('photos').then(photos => {
       this.photos = photos || [];
     });
   }
@@ -105,7 +105,7 @@ export class DeviceInfoPage implements OnInit {
             data: image.dataUrl
           });
           // Save all photos for later viewing
-          this.storage.set('photos', this.photos);
+          this.ionicStorage.set('photos', this.photos);
           // console.log(this.imgData);
           // console.log('image.webPath: ' + image.webPath);
           // console.log('image.path: ' + image.path);
@@ -142,7 +142,7 @@ export class DeviceInfoPage implements OnInit {
         {
           text: this.translate.instant('ALERT.btnOkText'),
           handler: () => {
-            this.storage.remove('photos');
+            this.ionicStorage.remove('photos');
             this.loadSavedPhotos();
           }
         }

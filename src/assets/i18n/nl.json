@@ -1,6 +1,6 @@
 {
   "MAP": {
-    "Title": "Map: Waar benk ik?",
+    "Title": "Waar ben ik?",
     "Lat": "Latitude",
     "Lng": "Longitude",
     "Address": "Adres",
@@ -26,11 +26,12 @@
   },
 
   "MENU": {
-    "OfficePage": "Kantoor pagina",
-    "MyProfile": "Mijn Profiel Pagina",
+    "HomePage": "Startpagina",
+    "MyProfile": "Profiel pagina",
     "InsurersList": "Lijst Verzekeraars",
     "About": "Over Portfolio",
-    "LogOut": "Uitloggen"
+    "LogOut": "Uitloggen",
+    "MyDevice": "Toestel Info"
   },
 
   "HOME": {
@@ -45,7 +46,7 @@
   },
 
   "SETTINGS": {
-    "MessageToggleLocal": "Enkel manuele ingave",
+    "MessageToggleLocal": "Uitsluitend manueel",
     "MessageToggleCanceled": "Toon ook vernietigd",
     "MessageToggleServerLive": "Server bevragen",
     "MessageAlert": "Wijzig EERST instellingen onderaan en sluit DAARNA af met taalkeuze!"

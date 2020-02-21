@@ -1,6 +1,6 @@
 {
   "MAP": {
-    "Title": "Map: Where am I?",
+    "Title": "Where am I?",
     "Lat": "Latitude",
     "Lng": "Longitude",
     "Address": "Address",
@@ -14,11 +14,12 @@
   },
 
   "MENU": {
-    "OfficePage": "Office Page",
-    "MyProfile": "My Profile Page",
+    "HomePage": "Home Page",
+    "MyProfile": "Profile Page",
     "InsurersList": "Insurers List",
     "About": "About Portfolio",
-    "LogOut": "Logout"
+    "LogOut": "Logout",
+    "MyDevice": "Device Info"
   },
 
   "HOME": {

@@ -24,13 +24,13 @@ export class HomePage implements OnInit {
     private authService: AuthService,
     private popoverCtrl: PopoverController,
     private alertCtrl: AlertController,
-    private translate: TranslateService,
+    private ts: TranslateService,
     private mc: ManualContractService,
-    private storage: Storage
+    private ionicStorage: Storage
   ) {}
 
   ngOnInit() {
-    this.storage.get('LOCALONLY').then(val => {
+    this.ionicStorage.get('LOCALONLY').then(val => {
       if (val === 'TRUE') {
         this.toggleLocalOnly = true;
       } else {
@@ -48,13 +48,13 @@ export class HomePage implements OnInit {
   }
 
   checkForLive() {
-    this.storage.get('SERVERLIVE').then(vals => {
+    this.ionicStorage.get('SERVERLIVE').then(vals => {
       if (vals === 'TRUE') {
         this.toggleServerLive = true;
       } else {
-        this.storage.get('DATEOFCOPY').then(val => {
+        this.ionicStorage.get('DATEOFCOPY').then(val => {
           if (!val) {
-            this.storage.set('SERVERLIVE', 'TRUE');
+            this.ionicStorage.set('SERVERLIVE', 'TRUE');
             this.toggleServerLive = true;
           } else {
             this.dateOfCopy = new Date(val);
@@ -81,8 +81,8 @@ export class HomePage implements OnInit {
 
   async showAlert() {
     const alert = await this.alertCtrl.create({
-      header: this.translate.instant('ALERT.header'),
-      message: this.translate.instant('ALERT.msg'),
+      header: this.ts.instant('ALERT.header'),
+      message: this.ts.instant('ALERT.msg'),
       buttons: ['OK']
     });
     alert.present();
@@ -97,7 +97,7 @@ export class HomePage implements OnInit {
 
     const { data } = await popover.onWillDismiss();
     this.checkForLive();
-    this.storage.get('LOCALONLY').then(val => {
+    this.ionicStorage.get('LOCALONLY').then(val => {
       if (val === 'TRUE') {
         this.toggleLocalOnly = true;
       } else {

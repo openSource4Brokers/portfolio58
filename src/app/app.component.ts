@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 import { Capacitor, Plugins } from '@capacitor/core';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -19,11 +20,12 @@ export class AppComponent implements OnInit {
   memberLoading = false;
 
   constructor(
+    private ionicStorage: Storage,
     private platform: Platform,
     private authService: AuthService,
     private jwtHelperService: JwtHelperService,
     private router: Router,
-    private languageService: LanguageService
+    private ls: LanguageService
   ) {
     this.initializeApp();
   }
@@ -34,7 +36,7 @@ export class AppComponent implements OnInit {
         Plugins.SplashScreen.hide();
       }
 
-      this.languageService.setInitialAppLanguage();
+      this.ls.setInitialAppLanguage();
     });
   }
 
@@ -50,6 +52,23 @@ export class AppComponent implements OnInit {
       this.authService.currentUser = this.user;
     }
     this.memberLoading = false;
+
+    /* this.ionicStorage.get('LOCALONLY').then(val => {
+      if (val === 'TRUE') {
+        this.router.navigate(['/customerslocalcopy']);
+      }
+    }); */
+
+    this.ionicStorage.get('LAST_CONTRACT').then(val => {
+      if (val) {
+        // console.log(val);
+        // need to redirect after exit external link
+        this.router.navigate(['/customerslocalcopy']);
+        // or later on (now only with saved local copy!)
+        // this.router.navigateByUrl('/member');
+        this.ionicStorage.remove('LAST_CONTRACT');
+      }
+    });
   }
 
   onLogout() {

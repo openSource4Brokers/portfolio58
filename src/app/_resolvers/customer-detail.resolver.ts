@@ -12,13 +12,13 @@ export class CustomerDetailResolver implements Resolve<VsoftCustomer> {
   constructor(
     private vCs: VsoftCustomerService,
     private router: Router,
-    private ts: ToastService
+    private toast: ToastService
   ) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<VsoftCustomer> {
-    return this.vCs.getVsoftCustomer(route.params['id']).pipe(
+    return this.vCs.getVsoftCustomer(route.params.id).pipe(
       catchError(error => {
-        this.ts.show('Problem retrieving data', 'short');
+        this.toast.show('Problem retrieving data', 'short');
         this.router.navigate(['/member']);
         return of(null);
       })
